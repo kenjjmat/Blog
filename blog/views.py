@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 
 # this is a list that comprises of dictionaries
 posts = [
@@ -26,4 +26,8 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'blog/about.html')
+    return render(request, 'blog/about.html', {'title': 'About'})
+
+
+def new(request):
+    return render(request, 'blog/new.html')
