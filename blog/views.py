@@ -1,5 +1,5 @@
 from django.shortcuts import render
-# database
+# database model
 from .models import Post
 
 
