@@ -20,10 +20,13 @@ ul {
     color:#cbd5db;
 }
 
-.navbar-brand{
-    color: red !important;
+.site-header:hover .navbar-nav:hover .nav-link:hover {
+    color: blue;
 }
 
+.site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+}
 .content-section {
     background: #ffffff;
     padding: 10px 20px;
