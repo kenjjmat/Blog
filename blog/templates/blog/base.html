@@ -21,7 +21,7 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-            <a class="navbar-brand mr-4" href="{% url 'blog-home'%}">My Blog</a>
+            <a class="navbar-brand title mr-4" href="{% url 'blog-home'%}">My Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,6 +42,13 @@
   <main role="main" class="container">
       <div class="row">
           <div class="col-md-8">
+              {% if messages %}
+              {% for messages in messages %}
+              <div class="alert alert-{{message.tags}}">
+                 {{ message }}
+              </div>
+              {% endfor %}
+              {% endif %}
               {% block content %}{% endblock %}
           </div>
           <div class="col-md-4">
@@ -53,14 +60,11 @@
                         <li class="list-group-item list-group-item-light">Announcements</li>
                         <li class="list-group-item list-group-item-light">Calendars</li>
                         <li class="list-group-item list-group-item-light">Etc</li>
-              </ul>
-                  </p>
+                      </ul>
+                 </p>
               </div>
           </div>
       </div>
   </main>
-
-    <!-- script java -->
-<script type="javascript" src="{% static 'blog/javascript/boostrap.min.js' %}"></script>
   </body>
 </html>
