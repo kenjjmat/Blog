@@ -22,7 +22,7 @@ from blog import views
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
     # allows us to display each post as independent
-    path('post/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('About/', views.about, name='blog-about'),
     path('new/', views.new)
 
